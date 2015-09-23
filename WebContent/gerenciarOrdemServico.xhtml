@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Cadastro Ordem de Serviço</title>
+</h:head>
+<h:body>
+	<h1>Cadastro Ordem de Serviço</h1>
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel value="ID:" />
+			<h:inputText id="codigo"
+				value="#{ordemServicoMB.ordemservico.id}" size="20" readonly="true"/>
+			<h:message for="codigo" />
+			
+			<h:outputLabel value="Cliente" />
+			<h:inputText id="cliente"
+				value="#{ordemServicoMB.ordemservico.clientes.nome}" size="20" />
+			<h:message for="descricao" />
+
+			<h:outputLabel value="Valor:" />
+			<h:inputText id="valor" value="#{ordemServicoMB.ordemservico.servicos.valor}"
+				size="20" />
+			<h:message for="valor" />
+			
+			<h:outputLabel value="Data Inicial:" />
+			<h:inputText id="datai" value="#{ordemServicoMB.ordemservico.dataInicial}"
+				size="20" />
+			<h:message for="datai" />
+			
+			<h:outputLabel value="Data Final:" />
+			<h:inputText id="dataf" value="#{ordemServicoMB.ordemservico.dataFinal}"
+				size="20" />
+			<h:message for="dataf" />
+			
+			<h:outputLabel value="Dias até a conclusão:" />
+			<h:inputText id="dias" value="#{ordemServicoMB.ordemservico.diasAteFinal}"
+				size="20" />
+			<h:message for="dias" />
+
+		</h:panelGrid>
+
+		<h:commandButton value="Inserir" />
+		<h:commandButton value="Alterar" />
+		<br />
+
+		<h:commandLink action="ordemservico" value="Voltar" />
+	</h:form>
+</h:body>
+</html>
